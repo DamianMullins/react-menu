@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>React Menu</title>
+
+  <link href="https://s3-eu-west-1.amazonaws.com/je-cdn-ieng-staging/ca/fozzie-assets/fozzie/dist/css/fozzie-a631cbb89c.min.css"
+    rel="stylesheet" />
+  <link href="/css/basket.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="l-container">
+    <div class="l-content g g--stack--narrow g--gutter">
+      <div class="g-col g-span6">
+        <div data-menu></div>
+      </div>
+
+      <div class="g-col g-span6">
+        <div class="c-basket">
+          <p class="c-basket-heading">Basket</p>
+          <div data-basket></div>
+        </div>
+      </div>
+
+      <!-- <div data-todo></div> -->
+    </div>
+  </div>
+  <script>
+    window.__INITIAL_STATE__ = {"menu":{"restaurantName":"Test Restaurant","items":[{"id":1,"name":"Traditional Lemonade &amp; Mint","price":2.51,"quantity":0},{"id":2,"name":"Mojo Juice, Apple","price":2.51,"quantity":0},{"id":3,"name":"Mojo Juice, Mango","price":2.51,"quantity":0},{"id":4,"name":"Mojo Juice, Orange","price":2.51,"quantity":0},{"id":5,"name":"Tropical Lightning, Apple","price":2.51,"quantity":0}]},"basket":{"address":"Tinsel Town- Demo, 1st Floor, Block 4, Imperial Place, Maxwell Road, AR51 1JN","items":[{"id":2,"name":null,"price":0,"quantity":2}],"deliveryFee":0.5,"deliveryTime":"Delivery ASAP"}};
+  </script>
+</body>
+
+</html>
