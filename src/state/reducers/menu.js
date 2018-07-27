@@ -1,19 +1,14 @@
 import { produce } from 'immer';
 import { MENU_GET_ALL_ITEMS } from '../actions';
 
-const menu = (state = { restaurantname: '', items: [] }, action) => {
-    switch (action.type) {
-        case MENU_GET_ALL_ITEMS: {
-            return produce(state, draftState => {
-                console.log(draftState);
-                draftState.menu.items = [...draftState.menu.items, ...action.items];
-            });
+const menu = (state = { restaurantname: '', items: [] }, action) =>
+    produce(state, draft => {
+        switch (action.type) { // eslint-disable-line default-case
+            case MENU_GET_ALL_ITEMS: {
+                draft.menu.items = [...draft.menu.items, ...action.items];
+                return;
+            }
         }
-
-        default: {
-            return state;
-        }
-    }
-}
+    });
 
 export default menu;

@@ -1,10 +1,10 @@
 import React from 'react';
 import deliveryIcon from '../icon--delivery.svg';
-import BasketItem from './BasketItem';
+import BasketItemContainer from '../containers/BasketItemContainer';
 
-const Basket = ({ basket }) => (
+const Basket = ({ basket, basketItems }) => (
     <div>
-        {basket.items.map(item => <BasketItem item={item} key={item.id} />)}
+        {basketItems.map(item => <BasketItemContainer item={item} key={item.id} />)}
 
         <hr className="c-basket-separator" />
 

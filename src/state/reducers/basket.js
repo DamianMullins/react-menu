@@ -6,44 +6,39 @@ import {
     BASKET_DECREMENT_ITEM_QUANTITY
 } from '../actions';
 
-const basket = (state = { address: '', deliveryFee: 0, deliveryTime: '', items: [] }, action) => {
-    switch (action.type) {
-        case BASKET_ADD_ITEM: {
-            return produce(state, draftState => {
-                draftState.items.push(action.item);
-            });
-        }
+const basket = (state = { address: '', deliveryFee: 0, deliveryTime: '', items: [] }, action) =>
+    produce(state, draft => {
+        switch (action.type) { // eslint-disable-line default-case
+            case BASKET_ADD_ITEM: {
+                draft.items.push({ id: action.id, quantity: 1 });
+                return;
+            }
 
-        case BASKET_REMOVE_ITEM: {
-            return produce(state, draftState => {
-                draftState.items = draftState.items.filter(item => item.id !== action.id);
-            });
-        }
+            case BASKET_REMOVE_ITEM: {
+                draft.items = draft.items.filter(item => item.id !== action.id);
+                return;
+            }
 
-        case BASKET_INCREMENT_ITEM_QUANTITY: {
-            return produce(state, draftState => {
-                const exisingItem = draftState.items.find(item => item.id === action.id);
+            case BASKET_INCREMENT_ITEM_QUANTITY: {
+                const exisingItem = draft.items.find(item => item.id === action.id);
 
                 if (exisingItem) {
                     exisingItem.quantity++;
                 }
-            });
-        }
 
-        case BASKET_DECREMENT_ITEM_QUANTITY: {
-            return produce(state, draftState => {
-                const exisingItem = draftState.items.find(item => item.id === action.id);
+                return;
+            }
 
-                if (exisingItem) {
+            case BASKET_DECREMENT_ITEM_QUANTITY: {
+                const exisingItem = draft.items.find(item => item.id === action.id);
+
+                if (exisingItem && exisingItem.quantity > 1) {
                     exisingItem.quantity--;
                 }
-            });
-        }
 
-        default: {
-            return state;
+                return;
+            }
         }
-    }
-}
+    });
 
 export default basket;
