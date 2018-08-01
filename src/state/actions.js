@@ -7,6 +7,12 @@ export function fetchItems () {
         });
 };
 
+export const LOCALE = 'LOCALE';
+export const setLocale = locale => ({
+    type: LOCALE,
+    locale
+});
+
 export const MENU_GET_ALL_ITEMS = 'MENU_GET_ALL_ITEMS';
 export const receiveItems = items => ({
     type: MENU_GET_ALL_ITEMS,

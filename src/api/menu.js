@@ -37,8 +37,7 @@ const data = {
             "name": "Mojo Juice, Apple",
             "price": 2.51
         }],
-        "deliveryFee": 0.5,
-        "deliveryTime": "Delivery ASAP"
+        "deliveryFee": 0.5
     }
 };
 

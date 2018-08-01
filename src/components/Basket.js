@@ -1,8 +1,8 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import deliveryIcon from '../icon--delivery.svg';
+import { FormattedMessage } from '../i18n';
 import BasketItemContainer from '../containers/BasketItemContainer';
-import BasketTotals from './BasketTotals';
+import BasketTotalsContainer from '../containers/BasketTotalsContainer';
+import deliveryIcon from '../icon--delivery.svg';
 
 const Basket = ({ basket, basketItems }) => (
     <div>
@@ -14,7 +14,7 @@ const Basket = ({ basket, basketItems }) => (
 
         <hr className="c-basket-separator" />
 
-        <BasketTotals basket={basket} basketItems={basketItems} />
+        <BasketTotalsContainer />
 
         <hr className="c-basket-separator" />
 
@@ -24,9 +24,8 @@ const Basket = ({ basket, basketItems }) => (
 
         <hr className="c-basket-separator" />
 
-        <p className="c-basket-deliveryOrCollectionDetails">
+        <p className="c-basket-deliveryOrCollectionDetails u-clearfix">
             <img src={deliveryIcon} className="icon-deliveryOrCollection" alt="" />
-            {basket.deliveryTime}
         </p>
     </div>
 );

@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
 import { removeOrDecrementItem } from '../state/actions';
 import BasketItem from '../components/BasketItem';
+import { numberFormats } from '../i18n';
 
-const mapStateToProps = (state, { item }) => ({
+const mapStateToProps = ({ locale }, { item }) => ({
+    currency: numberFormats[locale].currency,
     itemTotal: item.price * item.quantity
 });
 
