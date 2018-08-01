@@ -1,7 +1,14 @@
 {
   "name": "react-menu",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "Lead up work to the .Net Core SSR React project — https://github.com/DamianMullins/netcore-react",
+  "author": "Damian Mullins <damian.mullins@just-eat.com> (http://www.damianmullins.com)",
+  "license": "ISC",
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
+  },
   "dependencies": {
     "he": "1.1.1",
     "immer": "1.5.0",
@@ -27,8 +34,10 @@
     "webpack-cli": "3.1.0",
     "webpack-dev-server": "3.1.5"
   },
-  "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
-  }
+  "browserslist": [
+    "> 5%",
+    "last 2 versions",
+    "Safari >= 8",
+    "not ie 10"
+  ]
 }
